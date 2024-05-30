@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form | CoderGirl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <input type="checkbox" id="forgot-check">
+
+    <div class="login form">
+      <div class="form-header">
+        <header>Login</header>
+      </div>
+      <form action="#">
+        <input type="text" placeholder="Enter your email">
+        <input type="password" placeholder="Enter your password">
+        <a href="#" onclick="document.getElementById('forgot-check').checked = true;">Forgot password?</a>
+        <input type="button" class="button" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="forgot-password form">
+      <div class="form-header" id="forgot-password-header">
+        <header>Forgot Password</header>
+      </div>
+      <form id="forgot-password-form" action="#">
+        <input type="text" id="reset-email" placeholder="Enter your email to reset password">
+        <input type="button" class="button" value="Submit" onclick="showOtpInput()">
+      </form>
+      <div class="signup">
+        <span class="signup">Remember your password?
+          <label for="forgot-check">Login</label>
+        </span>
+      </div>
+    </div>
+    
+    <div class="registration form">
+      <div class="form-header">
+        <header>Signup</header>
+      </div>
+      <form action="#">
+        <input type="text" placeholder="Enter your email">
+        <input type="password" placeholder="Create a password">
+        <input type="password" placeholder="Confirm your password">
+        <input type="button" class="button" value="Signup" id="signup-button"> 
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('forgot-check').addEventListener('change', function() {
+      if (!this.checked) {
+        document.getElementById('check').checked = false;
+      }
+    });
+
+    function showOtpInput() {
+      const form = document.getElementById('forgot-password-form');
+      const header = document.getElementById('forgot-password-header');
+      if (header) {
+        header.remove();
+      }
+      form.innerHTML = `
+        <div class="form-header">
+          <header>Enter OTP</header>
+        </div>
+        <input type="text" placeholder="Enter the OTP sent to your email">
+        <input type="button" class="button" value="Verify" onclick="verifyOtp()">
+      `;
+    }
+
+    function verifyOtp() {
+      const form = document.getElementById('forgot-password-form');
+      form.innerHTML = `
+        <div class="form-header">
+          <header>Reset Password</header>
+        </div>
+        <input type="password" placeholder="Enter new password">
+        <input type="password" placeholder="Confirm new password">
+        <input type="button" class="button" value="Reset Password" onclick="resetPassword()">
+      `;
+    }
+
+    function resetPassword() {
+      // Add password reset logic here
+      alert('Password has been reset! You can now log in with your new password.');
+      // Optionally, you can redirect the user to the login page
+      document.getElementById('forgot-check').checked = false;
+      document.getElementById('check').checked = false;
+    }
+
+    // Function to show signup success message
+    document.getElementById('signup-button').addEventListener('click', function() {
+      alert('Thank you for signing up! You can now login.');
+    });
+  </script>
+</body>
+</html>
