@@ -6,6 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form | CoderGirl</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Style for round logos */
+    .social-login {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .social-login img {
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -26,6 +41,12 @@
         <span class="signup">Don't have an account?
           <label for="check">Signup</label>
         </span>
+      </div>
+      <!-- Add Twitter and Google login -->
+      <div class="social-login">
+        <img src="img/google.png" alt="Twitter">
+        <img src="img/Twitter.png" alt="Twitter">
+        <img src="img/apple.png" alt="Twitter">
       </div>
     </div>
 
@@ -107,6 +128,7 @@
     document.getElementById('signup-button').addEventListener('click', function() {
       alert('Thank you for signing up! You can now login.');
     });
+
   </script>
 </body>
 </html>
