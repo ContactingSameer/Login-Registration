@@ -6,21 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form | CoderGirl</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Style for round logos */
-    .social-login {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .social-login img {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -42,7 +27,6 @@
           <label for="check">Signup</label>
         </span>
       </div>
-      <!-- Add Twitter and Google login -->
       <div class="social-login">
         <img src="img/google.png" alt="google">
         <img src="img/apple.png" alt="apple">
@@ -118,12 +102,10 @@
     function resetPassword() {
       // Add password reset logic here
       alert('Password has been reset! You can now log in with your new password.');
-      // Optionally, you can redirect the user to the login page
       document.getElementById('forgot-check').checked = false;
       document.getElementById('check').checked = false;
     }
 
-    // Function to show signup success message
     document.getElementById('signup-button').addEventListener('click', function() {
       alert('Thank you for signing up! You can now login.');
     });

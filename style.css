@@ -1,51 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body {
   min-height: 100vh;
   width: 100%;
   background: #03AED2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 430px;
   width: 100%;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
+
 .container .registration,
 .container .forgot-password {
   display: none;
 }
+
 #check:checked ~ .registration,
 #forgot-check:checked ~ .forgot-password {
   display: block;
 }
+
 #check:checked ~ .login,
 #forgot-check:checked ~ .login {
   display: none;
 }
+
 #check,
 #forgot-check {
   display: none;
 }
+
 .container .form {
   padding: 2rem;
 }
+
 .form header {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
 .form input {
   height: 60px;
   width: 100%;
@@ -56,17 +67,21 @@ body {
   border-radius: 6px;
   outline: none;
 }
+
 .form input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
+
 .form a {
   font-size: 16px;
   color: #009579;
   text-decoration: none;
 }
+
 .form a:hover {
   text-decoration: underline;
 }
+
 .form input.button {
   color: #fff;
   background: #009579;
@@ -77,17 +92,64 @@ body {
   cursor: pointer;
   transition: 0.4s;
 }
+
 .form input.button:hover {
   background: #006653;
 }
+
 .signup {
   font-size: 17px;
   text-align: center;
 }
+
 .signup label {
   color: #009579;
   cursor: pointer;
 }
+
 .signup label:hover {
   text-decoration: underline;
+}
+
+/* Style for round logos */
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-login img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    margin: 0 5%;
+    border-radius: 0;
+  }
+
+  .form input {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .form header {
+    font-size: 1.5rem;
+  }
+
+  .form input.button {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .social-login img {
+    width: 30px;
+    height: 30px;
+  }
 }
